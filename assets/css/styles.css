@@ -1,0 +1,95 @@
+body {
+    font-family: 'Arial', sans-serif;
+}
+
+.container {
+    background-color: #ffffff;
+}
+/* Main section */
+.main-section {
+    padding: 50px;
+    background-color: #ffffff;
+}
+
+.main-title {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.main-subtitle {
+    font-size: 1.5rem;
+    color: #6c757d;
+}
+
+.feature-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.feature-list li {
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+.main-buttons {
+    margin-top: 20px;
+}
+
+.main-buttons .btn {
+    margin-right: 15px;
+}
+
+/* Align the image to the right */
+.flipbook-demo {
+    max-width: 50%;
+    text-align: right;
+}
+
+.flipbook-demo img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.more-features {
+    margin-top: 50px;
+}
+
+.more-features h3 {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.more-features .features-list {
+    margin-top: 20px;
+    list-style-type: none;
+    padding: 0;
+    font-size: 1.2rem;
+}
+.footer {
+    
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer p {
+    margin: 0;
+    font-size: 1rem;
+}
+
+
+/* Center the navbar items */
+.navbar-nav {
+    flex-direction: row;
+}
+
+.navbar-nav .nav-link {
+    padding-right: 20px;
+    padding-left: 20px;
+    color: #000;
+}
+
+/* Dropdown User Icon */
+.dropdown .dropdown-menu {
+    min-width: 100px;
+}
