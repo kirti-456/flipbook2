@@ -1,0 +1,118 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('./assets/images/headerImage.jpg') no-repeat center center fixed;  /* Background image */
+    background-size: cover;  /* Cover the entire background */
+    color: white;  /* Text color */
+}
+
+.container {
+    display: flex;
+    width: 80%;
+    max-width: 1200px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.login-box, .register-box, .welcome-box {
+    padding: 30px;
+    flex: 1;
+}
+
+.login-box, .register-box {
+    background-color: rgb(219, 234, 247);  /* Background color with opacity */
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo img {
+    height: 50px;
+    margin-bottom: 20px;
+}
+
+.login-form, .register-form {
+    width: 100%;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    color: rgb(81, 81, 81);
+    display: block;
+    margin-bottom: 5px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+.forgot-password, .login {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.forgot-password a, .login a {
+    color: rgb(7 41 165);
+    text-decoration: none;
+}
+
+.login-button, .register-button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(7 41 165);
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.register, .login {
+    color: rgb(81, 81, 81);
+    text-align: center;
+}
+
+.register a, .login a {
+    color: rgb(7 41 165);
+    text-decoration: none;
+}
+
+.welcome-box {
+    background: rgb(219, 234, 247);  /* Semi-transparent background */
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.welcome-box h1 {
+    color: rgb(7 41 165);
+    font-size: 3em;
+    margin: 0 0 10px 0;
+}
+
+.welcome-box p {
+    color: rgb(81, 81, 81);
+    margin: 10px 0;
+}
+
+.welcome-box a {
+    color: #e4e4e4;
+    text-decoration: none;
+}
