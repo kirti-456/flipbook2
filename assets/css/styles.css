@@ -3,8 +3,25 @@ body {
 }
 
 .container {
-    background-color: #ffffff;
+    background-color: white;
 }
+/* Navbar background color */
+.navbar {
+    background-color: white !important; /* Forces the navbar to be white */
+}
+
+.navbar-nav .nav-link {
+    padding-right: 20px;
+    padding-left: 20px;
+    color: #000; /* Set the font color to black */
+}
+
+.dropdown-menu {
+    min-width: 100px;
+}
+
+
+
 /* Main section */
 .main-section {
     padding: 50px;
