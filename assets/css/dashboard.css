@@ -8,7 +8,9 @@
 body {
     font-family: Arial, sans-serif;
 }
-
+.navbar-brand img {
+    height: 40px;
+}
 header {
     display: flex;
     justify-content: space-between;
@@ -16,12 +18,11 @@ header {
     padding: 10px 20px;
     background-color: white; /* Changed background to white */
     color: black; /* Changed font color to black */
-    border-bottom: 1px solid #ddd; /* Optional: Adds a subtle border */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    
 }
 
-.logo img {
-    height: 40px;
-}
+
 
 nav ul {
     list-style: none;

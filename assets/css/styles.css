@@ -1,31 +1,38 @@
+/* General Styles */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: Arial, sans-serif;
 }
 
 .container {
-    background-color: white;
-}
-/* Navbar background color */
-.navbar {
-    background-color: white !important; /* Forces the navbar to be white */
+    max-width: 100-px;
+    margin: 0 auto;
+    padding: 10px;
 }
 
-.navbar-nav .nav-link {
-    padding-right: 20px;
-    padding-left: 20px;
-    color: #000; /* Set the font color to black */
+/* Navbar */
+
+.navbar {
+    padding: 0rem 0;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.nav-link {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+}
+
+.navbar-brand img {
+    height: 40px;
 }
 
 .dropdown-menu {
-    min-width: 100px;
+    min-width: 120px;
 }
 
-
-
-/* Main section */
+/* Main Section */
 .main-section {
-    padding: 50px;
-    background-color: #ffffff;
+    padding: 50px 0;
 }
 
 .main-title {
@@ -39,7 +46,7 @@ body {
 }
 
 .feature-list {
-    list-style-type: none;
+    list-style: none;
     padding: 0;
 }
 
@@ -48,65 +55,63 @@ body {
     margin-bottom: 15px;
 }
 
-.main-buttons {
-    margin-top: 20px;
-}
-
 .main-buttons .btn {
-    margin-right: 15px;
+    margin-right: 10px;
 }
 
-/* Align the image to the right */
+/* Flipbook Demo */
 .flipbook-demo {
     max-width: 50%;
-    text-align: right;
 }
 
 .flipbook-demo img {
-    max-width: 100%;
+    width: 100%;
     height: auto;
     border-radius: 10px;
 }
 
-.more-features {
-    margin-top: 50px;
-}
-
-.more-features h3 {
-    font-size: 2rem;
-    font-weight: bold;
-}
-
-.more-features .features-list {
-    margin-top: 20px;
-    list-style-type: none;
-    padding: 0;
-    font-size: 1.2rem;
-}
+/* Footer */
 .footer {
-    
-    padding: 20px 0;
-    text-align: center;
+    background-color: #222;
+    color: #fff;
+    font-size: 14px;
 }
 
-.footer p {
-    margin: 0;
-    font-size: 1rem;
+.footer ul {
+    list-style: none;
+    padding: 0;
 }
 
-
-/* Center the navbar items */
-.navbar-nav {
-    flex-direction: row;
+.footer ul li {
+    margin-bottom: 5px;
 }
 
-.navbar-nav .nav-link {
-    padding-right: 20px;
-    padding-left: 20px;
-    color: #000;
+.footer ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
 }
 
-/* Dropdown User Icon */
-.dropdown .dropdown-menu {
-    min-width: 100px;
+.footer ul li a:hover {
+    color: #ddd;
+}
+
+.footer-bottom {
+    margin-top: 30px;
+    color: #aaa;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .navbar-collapse {
+        justify-content: start;
+    }
+
+    .flipbook-demo {
+        display: none;
+    }
+
+    .footer {
+        text-align: center;
+    }
 }

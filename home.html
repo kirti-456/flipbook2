@@ -8,28 +8,27 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- External CSS -->
     <link rel="stylesheet" href="./assets/css/styles.css">
-    <link rel="stylesheet" href="./assets/css/styles1.css">
 </head>
 <body>
-    <!-- Header (Navbar) -->
-
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
         <div class="container">
-            <!-- Logo -->
-            <a class="navbar-brand" href="home.html">
-                <img src="./assets/images/download.png" alt="Logo" height="30">
+            <a class="navbar-brand" href="./home.html">
+                <img src="./assets/images/download.png" alt="Logo" height="40" >
             </a>
-            <!-- Centered Navbar Items -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
             <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Features</a>
+                        <a class="nav-link active" href="./features.html">Features</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Explore</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="template.html">Templates</a>
+                        <a class="nav-link" href="./template.html">Templates</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Solutions</a>
@@ -39,8 +38,6 @@
                     </li>
                 </ul>
             </div>
-
-            <!-- User Dropdown & Dashboard Button -->
             <div class="d-flex align-items-center">
                 <div class="dropdown">
                     <a href="#" class="d-block link-dark text-decoration-none" id="dropdownUser" data-bs-toggle="dropdown" aria-expanded="false">
@@ -56,21 +53,20 @@
         </div>
     </nav>
 
-<hr>
 
     <!-- Main Section -->
-    <section class="main-section">
+    <section class="main-section py-5">
         <div class="container d-flex align-items-center justify-content-between">
             <div class="content">
                 <h1 class="main-title">Online Flipbook Maker</h1>
-                <p class="main-subtitle">Create, Design and Share</p>
+                <p class="main-subtitle">Create, Design, and Share</p>
 
                 <ul class="feature-list">
                     <li>Convert PDF/PPT/JPG files into digital flipbooks</li>
-                    <li>Edit templates to make magazines, brochures, catalogs, etc.</li>
-                    <li>Enhance text or generate images from text with AI</li>
-                    <li>Add AI chatbots, links, videos, and more to engage your audience</li>
-                    <li>Grab the link and share across all channels</li>
+                    <li>Edit templates for magazines, brochures, catalogs, etc.</li>
+                    <li>Enhance or generate images from text with AI</li>
+                    <li>Add AI chatbots, links, videos, and more for engagement</li>
+                    <li>Grab the link and share across all platforms</li>
                 </ul>
 
                 <!-- Buttons -->
@@ -82,108 +78,68 @@
 
             <!-- Flipbook Demo Image -->
             <div class="flipbook-demo">
-                <img src="./assets/images/flip.png" alt="Flipbook Demo" class="img-fluid">
+                <img src="./assets/images/flip.png" alt="Flipbook Demo" class="img-fluid rounded">
             </div>
         </div>
     </section>
 
-    <footer class="footer">
+    <!-- Footer -->
+    <footer class="footer bg-dark text-white py-4">
         <div class="container">
-            <p>&copy; 2024 FlipBook Maker. All Rights Reserved.</p>
+            <div class="row">
+                <div class="col-md-2 mb-3">
+                    <h5>Company</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white-50">Home</a></li>
+                        <li><a href="#" class="text-white-50">About Us</a></li>
+                        <li><a href="#" class="text-white-50">Learning Center</a></li>
+                        <li><a href="#" class="text-white-50">Office Tools</a></li>
+                        <li><a href="#" class="text-white-50">Mango AI</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2 mb-3">
+                    <h5>Cooperation</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white-50">Elite Program</a></li>
+                        <li><a href="#" class="text-white-50">Partnership</a></li>
+                        <li><a href="#" class="text-white-50">Community</a></li>
+                        <li><a href="#" class="text-white-50">DMCA Policy</a></li>
+                        <li><a href="#" class="text-white-50">Country Distributor</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2 mb-3">
+                    <h5>Support</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white-50">Contact Us</a></li>
+                        <li><a href="#" class="text-white-50">Help Center</a></li>
+                        <li><a href="#" class="text-white-50">Updates</a></li>
+                        <li><a href="#" class="text-white-50">Gift Card Exchange</a></li>
+                        <li><a href="#" class="text-white-50">Blog Archive</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2 mb-3">
+                    <h5>Follow Us</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white-50">Twitter</a></li>
+                        <li><a href="#" class="text-white-50">Facebook</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2 mb-3">
+                    <h5>Policies</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white-50">Privacy</a></li>
+                        <li><a href="#" class="text-white-50">Cookie Policy</a></li>
+                        <li><a href="#" class="text-white-50">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <p class="text-center mt-4 text-white-50">Explore Our Other Products: AI Video Generator, Animation Software, Video Maker, and more.</p>
+            <p class="text-center text-white-50">&copy; 2024 WONDER IDEA TECHNOLOGY LIMITED. All rights reserved.</p>
         </div>
     </footer>
+
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js"></script>
-<!-- Login Modal -->
-<div id="loginModal" class="modal">
-<div class="modal-content">
-    <span class="close" onclick="closeModal('loginModal')">&times;</span>
-    <h1>Login to Flipbook Maker</h1>
-    <form class="login-form">
-        <div class="input-group">
-            <label for="login-username">Username or Email</label>
-            <input type="text" id="login-username" name="username" required>
-        </div>
-        <div class="input-group">
-            <label for="login-password">Password</label>
-            <input type="password" id="login-password" name="password" required>
-        </div>
-        <div class="forgot-password">
-            <a href="#">Forgot your password?</a>
-        </div>
-        <button type="submit" class="login-button">Login</button>
-        <div class="register">
-            <span>Don't have an account? <a href="#" onclick="showModal('registerModal')">Register now</a></span>
-        </div>
-    </form>
-</div>
-</div>
-
-<!-- Register Modal -->
-<div id="registerModal" class="modal">
-    <div class="modal-content">
-        <span class="close" onclick="closeModal('registerModal')">&times;</span>
-        <h1>Register for Flipbook Maker</h1>
-        <form class="register-form">
-            <div class="input-group">
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name" required>
-            </div>
-            <div class="input-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-            <div class="input-group">
-                <label for="phone">Phone</label>
-                <input type="tel" id="phone" name="phone" required>
-            </div>
-            <div class="input-group">
-                <label for="password">Password</label>
-                <input type="password" id="password" name="password" required>
-            </div>
-            <div class="input-group">
-                <label for="confirm-password">Confirm Password</label>
-                <input type="password" id="confirm-password" name="confirm-password" required>
-            </div>
-            <button type="submit" class="register-button">Register</button>
-            <div class="login">
-                <span>Already have an account? <a href="#" onclick="switchToLogin()">Login</a></span>
-            </div>
-        </form>
-    </div>
-</div>
-
-<!-- Modal JavaScript -->
-<script>
-function showModal(modalId) {
-    document.getElementById(modalId).style.display = "flex";
-}
-
-function closeModal(modalId) {
-    document.getElementById(modalId).style.display = "none";
-}
-function switchToLogin() {
-    closeModal('registerModal'); // Close the Register Modal
-    showModal('loginModal');     // Show the Login Modal
-}
-// Close modal when clicking outside content
-window.onclick = function(event) {
-    if (event.target.classList.contains('modal')) {
-        event.target.style.display = "none";
-    }
-};
-
-// Trigger the modals
-document.querySelector(".dropdown-item[href='login.html']").addEventListener("click", function(event) {
-    event.preventDefault();
-    showModal('loginModal');
-});
-
-document.querySelector(".dropdown-item[href='register.html']").addEventListener("click", function(event) {
-    event.preventDefault();
-    showModal('registerModal');
-});
-</script>
-    </body>
+</body>
 </html>
