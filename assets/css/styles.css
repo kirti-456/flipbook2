@@ -12,6 +12,9 @@ body {
 /* Navbar */
 
 .navbar {
+    position: fixed;
+    top: 0%;
+    width: 100%;
     padding: 0rem 0;
     background-color: white;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
