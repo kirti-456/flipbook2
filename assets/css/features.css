@@ -18,14 +18,11 @@ body {
 
 /* Navbar */
 .navbar {
-<<<<<<< HEAD
     padding: 0.1rem 0;
-=======
     position: fixed;
     top: 0%;
     width: 100%;
     padding: 0rem 0;
->>>>>>> origin/main
     background-color: white;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
 }
@@ -102,16 +99,13 @@ body {
     line-height: 1.6;
 }
 
-<<<<<<< HEAD
 /* Footer */
-=======
 /* Make boxes bigger */
 .feature-item, .share-item {
     padding: 40px;
     width: 100%;
 }
 
->>>>>>> origin/main
 footer {
     background-color: #222;
     color: #fff;
