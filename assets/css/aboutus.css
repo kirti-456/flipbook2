@@ -1,4 +1,3 @@
-/* General Styles */
 * {
     margin: 0;
     padding: 0;
@@ -8,6 +7,7 @@
 body {
     font-family: 'Arial', sans-serif;
     background-color: white;
+    padding-top: 80px;
 }
 
 .container {
@@ -34,77 +34,6 @@ body {
 
 .navbar-brand img {
     height: 40px;
-}
-
-/* Header Section */
-.header {
-    background: linear-gradient(135deg, #007bff 0%, #6c63ff 100%);
-    color: white;
-    text-align: left;
-    padding: 80px 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.header .display-4 {
-    font-weight: bold;
-}
-
-.header .lead {
-    font-size: 1.2rem;
-}
-
-.header img {
-    margin-top: 40px;
-    max-width: 90%;
-    margin-left: 40px;
-}
-
-/* Features Section */
-.features {
-    padding: 80px 0;
-}
-
-.feature-item, .share-item {
-    transition: transform 0.3s ease;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    text-align: left;
-    padding: 30px;
-    border-radius: 15px;
-    background-color: white;
-}
-
-.feature-item:hover, .share-item:hover {
-    transform: translateY(-10px);
-}
-
-.feature-item img, .share-item img {
-    width: 200px;
-    height: auto;
-    margin-right: 30px;
-}
-
-.feature-item h3, .share-item h3 {
-    font-size: 1.6rem;
-    font-weight: bold;
-}
-
-.feature-item p, .share-item p {
-    font-size: 1.1rem;
-    margin-top: 10px;
-    line-height: 1.6;
-}
-
-/* Footer */
-/* Make boxes bigger */
-.feature-item, .share-item {
-    padding: 40px;
-    width: 100%;
 }
 
 footer {
@@ -175,20 +104,9 @@ footer {
         margin: 20px 0;
     }
 
-    .features .feature-item img, .features .share-item img {
-        width: 100px;
-    }
 }
 
 @media (max-width: 992px) {
-    .feature-item img, .share-item img {
-        width: 80px;
-    }
-
-    .feature-item h3, .share-item h3 {
-        font-size: 1.4rem;
-    }
-
     .header h1 {
         font-size: 2.5rem;
     }
@@ -201,18 +119,6 @@ footer {
 
     .header .display-4 {
         font-size: 2rem;
-    }
-
-    .features {
-        padding: 60px 0;
-    }
-
-    .feature-item p, .share-item p {
-        font-size: 1rem;
-    }
-
-    .feature-item img, .share-item img {
-        width: 80px;
     }
 
     .footer-container {
@@ -234,19 +140,101 @@ footer {
         font-size: 1rem;
     }
 
-    .features {
-        padding: 40px 0;
-    }
-
-    .feature-item img, .share-item img {
-        width: 70px;
-    }
-
     footer {
         padding: 30px 0;
     }
 
     .footer-section {
         margin-bottom: 20px;
+    }
+}
+
+/* aboutus.css */
+.aboutus {
+    padding: 2rem;
+    max-width: 800px;
+    margin: auto;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+.aboutus h1 {
+    font-size: 2.2rem;
+    color: #0056b3;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+
+.aboutus p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 1rem;
+}
+
+.aboutus .section-title {
+    font-size: 1.8rem;
+    color: #0056b3;
+    font-weight: 600;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    text-align: left;
+    border-bottom: 2px solid #0056b3;
+    padding-bottom: 0.5rem;
+}
+
+.aboutus ul {
+    padding-left: 1.2rem;
+    color: #333;
+}
+
+.aboutus ul li {
+    margin-bottom: 0.75rem;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.aboutus ul li::before {
+    content: '•';
+    color: #0056b3;
+    font-weight: bold;
+    position: absolute;
+    left: -1.2rem;
+}
+
+.aboutus strong {
+    color: #0056b3;
+    font-weight: 600;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    .aboutus {
+        padding: 1.5rem;
+    }
+    .aboutus h1 {
+        font-size: 1.8rem;
+    }
+    .aboutus .section-title {
+        font-size: 1.6rem;
+    }
+    .aboutus p, .aboutus ul li {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .aboutus {
+        padding: 1rem;
+    }
+    .aboutus h1 {
+        font-size: 1.6rem;
+    }
+    .aboutus .section-title {
+        font-size: 1.4rem;
     }
 }
