@@ -19,7 +19,7 @@
         font-style: italic;
     }
    </style>
-   <a href="home.php" class="logo italic-text">Khadi<span>Mart</span></a>
+   <a href="index.html" class="logo italic-text">Khadi<span>Mart</span></a>
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
       <nav class="navbar">
          <a href="home.php">home</a>
@@ -59,7 +59,7 @@
             <a href="user_register.php" class="option-btn">register</a>
             <a href="user_login.php" class="option-btn">login</a>
          </div>
-         <a href="components/user_logout.php" class="delete-btn" onclick="return confirm('logout from the website?');">logout</a> 
+         <a href="user_logout.php" class="delete-btn" onclick="return confirm('logout from the website?');">logout</a> 
          <?php
             }else{
          ?>
