@@ -1,6 +1,6 @@
 <?php
 
-include 'components/connect.php';
+include 'connect.php';
 
 session_start();
 
@@ -23,7 +23,7 @@ if(isset($_POST['submit'])){
 
    if($select_user->rowCount() > 0){
       $_SESSION['user_id'] = $row['id'];
-      header('location:home.php');
+      header('location:index.html');
    }else{
       $message[] = 'incorrect username or password!';
    }
@@ -39,14 +39,16 @@ if(isset($_POST['submit'])){
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>login</title>
-
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- External CSS -->
+   <link rel="stylesheet" href="./assets/css/log_reg.css">
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-   <link rel="stylesheet" href="css/style.css">
+   <link rel="stylesheet" href="./assets/css/styles.css">
 
 </head>
 <body>
    
-<?php include 'components/user_header.php'; ?>
+<?php include 'user_header.php'; ?>
 
 <section class="form-container">
 
@@ -54,7 +56,6 @@ if(isset($_POST['submit'])){
       <h3>login now</h3>
       <input type="email" name="email" required placeholder="enter your email" maxlength="50"  class="box" oninput="this.value = this.value.replace(/\s/g, '')">
       <input type="password" name="pass" required placeholder="enter your password" maxlength="20"  class="box" oninput="this.value = this.value.replace(/\s/g, '')">
-      <a href="admin/admin_login.php" class="option-btn">Login as admin</a>
       <input type="submit" value="login now" class="btn" name="submit">
       <p>don't have an account?</p>
       <a href="user_register.php" class="option-btn">register now</a>
@@ -62,7 +63,7 @@ if(isset($_POST['submit'])){
 
 </section>
 
-<script src="js/script.js"></script>
+<script src="./assets/js/script.js"></script>
 
 </body>
 </html>
