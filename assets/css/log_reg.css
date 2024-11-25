@@ -45,7 +45,6 @@ html{
 
 body{
    background-color: var(--light-bg);
-   margin-top: 90px;
 }
 
 section{
@@ -155,9 +154,6 @@ section{
 
 .header{
    position: sticky;
-   top:0; left:0; right:0;
-   background-color: var(--white);
-   box-shadow: var(--box-shadow);
    z-index: 1000;
 }
 
