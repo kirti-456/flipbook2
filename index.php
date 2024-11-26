@@ -1,14 +1,31 @@
+<?php
+session_start();
+$is_logged_in = isset($_SESSION["user"]);
+$user_name = "User"; // Placeholder for the user's name
+$email = null;
 
-You said:
+if ($is_logged_in) {
+    require_once "database.php"; // Include your database connection file
+    if (isset($_SESSION['email'])) {
+        $email = mysqli_real_escape_string($conn, $_SESSION['email']);
+    
+    $sql = "SELECT full_name FROM users WHERE email = '$email'";
+    $result = mysqli_query($conn, $sql);
+    $user = mysqli_fetch_assoc($result);
+    if ($user) {
+        $user_name = htmlspecialchars($user['full_name']); // Sanitize output
+    }
+}
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Online Flipbook Maker</title>
-    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- External CSS -->
     <link rel="stylesheet" href="./assets/css/styles.css">
     <link rel="stylesheet" href="./assets/css/styles1.css">
 </head>
@@ -16,7 +33,7 @@ You said:
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
         <div class="container">
-            <a class="navbar-brand" href="./index.html">
+            <a class="navbar-brand" href="./index.php">
                 <img src="./assets/images/download.png" alt="Logo" height="40" >
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -25,34 +42,63 @@ You said:
             <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="./features.html">Features</a>
+                        <a class="nav-link" href="./features.php">Features</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Explore</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./template.html">Templates</a>
+                        <a class="nav-link" href="./template.php">Templates</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="aboutus.html">About us</a>
+                        <a class="nav-link" href="aboutus.php">About us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="contactUs.html">Contact us</a>
+                        <a class="nav-link" href="contactUs.php">Contact us</a>
                     </li>
                 </ul>
             </div>
             <div class="d-flex align-items-center">
-                <div class="dropdown">
-                    <a href="#" class="d-block link-dark text-decoration-none" id="dropdownUser" data-bs-toggle="dropdown" aria-expanded="false">
-                        <img src="./assets/images/usericon.png" alt="User" width="32" height="32" class="rounded-circle">
-                    </a>
-                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownUser">
-                        <li><a class="dropdown-item" href="user_login.php">Login</a></li>
-                        <li><a class="dropdown-item" href="user_register.php">Register</a></li>
-                    </ul>
-                </div>
-                <a class="btn btn-primary ms-3" href="./dashboard.html">Dashboard</a>
+            <a class="btn btn-primary me-3" href="<?php echo $is_logged_in ? './dashboard.php' : 'javascript:void(0)'; ?>" 
+                onclick="<?php echo !$is_logged_in ? 'redirectToLogin()' : ''; ?>">
+                Dashboard 
+            </a>
+                <?php if ($is_logged_in): ?>
+                    <!-- Profile Dropdown -->
+                    <div class="dropdown">
+                        <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownProfile" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="./assets/images/usericon.png" alt="User" width="32" height="32" class="rounded-circle">
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownProfile">
+                            <li><h6 class="dropdown-header">Hi, <?php echo $user_name; ?>!</h6></li>
+                            <!-- <li><a class="dropdown-item" href="profile.php">My Profile</a></li> -->
+                            <li><hr class="dropdown-divider"></li>
+                            <li>
+                                <form action="logout.php" method="POST" class="d-inline">
+                                    <button type="submit" class="dropdown-item text-danger">Logout</button>
+                                </form>
+                            </li>
+                        </ul>
+                    </div>
+                <?php else: ?>
+                    <!-- Login/Register Links -->
+                    <div class="dropdown">
+                        <a href="#" class="d-block link-dark text-decoration-none" id="dropdownUser" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="./assets/images/usericon.png" alt="User" width="32" height="32" class="rounded-circle">
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownUser">
+                            <li><a class="dropdown-item" href="login.php">Login</a></li>
+                            <li><a class="dropdown-item" href="registration.php">Register</a></li>
+                        </ul>
+                    </div>
+                <?php endif; ?>
             </div>
+            <script>
+                function redirectToLogin() {
+                alert("Please log in first to access the Dashboard.");
+                window.location.href = "login.php"; // Redirect to login page
+            }
+            </script>
         </div>
     </nav>
 
