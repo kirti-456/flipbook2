@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (isset($_SESSION["user"])) {
-   header("Location: index.php");
+header("Location: index.php");
 }
 
 $is_logged_in = isset($_SESSION["user"]);
@@ -12,7 +12,7 @@ if ($is_logged_in) {
     require_once "database.php"; // Include your database connection file
     if (isset($_SESSION['email'])) {
         $email = mysqli_real_escape_string($conn, $_SESSION['email']);
-    
+
     $sql = "SELECT full_name FROM users WHERE email = '$email'";
     $result = mysqli_query($conn, $sql);
     $user = mysqli_fetch_assoc($result);
@@ -65,7 +65,7 @@ if ($is_logged_in) {
             <div class="d-flex align-items-center">
             <a class="btn btn-primary me-3" href="<?php echo $is_logged_in ? './dashboard.php' : 'javascript:void(0)'; ?>" 
                 onclick="<?php echo !$is_logged_in ? 'redirectToLogin()' : ''; ?>">
-                Dashboard 
+                Dashboard
             </a>
                 <?php if ($is_logged_in): ?>
                     <!-- Profile Dropdown -->
