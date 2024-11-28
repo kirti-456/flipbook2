@@ -1,6 +1,5 @@
 <?php
 session_start();
-<<<<<<< HEAD
 include('database.php');
 
 if (!isset($_SESSION['user_id'])) {
@@ -8,8 +7,6 @@ if (!isset($_SESSION['user_id'])) {
     exit;
 }
 
-=======
->>>>>>> origin/main
 $is_logged_in = isset($_SESSION["user"]);
 $user_name = "User"; // Placeholder for the user's name
 $email = null;
@@ -27,7 +24,6 @@ if ($is_logged_in) {
     }
 }
 }
-<<<<<<< HEAD
 
 $userId = null;
 $userId = $_SESSION['user_id'];
@@ -43,8 +39,6 @@ $result = $stmt->get_result();
 //     echo "<a href='" . htmlspecialchars($row['flipbook_path']) . "' target='_blank'>View Flipbook</a>";
 //     echo "</div>";
 // }
-=======
->>>>>>> origin/main
 ?>
 
 <!DOCTYPE html>
@@ -57,13 +51,8 @@ $result = $stmt->get_result();
     <link rel="stylesheet" href="./assets/css/dashboard.css">
 </head>
 <body>
-<<<<<<< HEAD
     <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm ">
     <div class="container">
-=======
-<nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm ">
-<div class="container">
->>>>>>> origin/main
     <a class="navbar-brand" href="./index.php">
         <img src="./assets/images/download.png" alt="Logo" height="40" >
     </a>
@@ -135,18 +124,13 @@ $result = $stmt->get_result();
                     <li><a href="#">Book Chatbots</a></li>
                     <li><a href="#">My Templates</a></li>
                 </ul>
-<<<<<<< HEAD
                 <li><a href="create.php">Create now</a></li>
-=======
-                <li><a href="#">Digital Sales</a></li>
->>>>>>> origin/main
                 <li><a href="#">Branding</a></li>
                 <li><a href="#">Statistics</a></li>
             </ul>
         </aside>
 
         <section class="main-content">
-<<<<<<< HEAD
             <button id="myUploadsButton" class="btn btn-primary mb-3">My Uploads</button>
             <div id="flipbooksContainer" class="flipbooks-container">
             <!-- Flipbooks will be loaded here dynamically -->
@@ -154,10 +138,6 @@ $result = $stmt->get_result();
         </section>
 
         
-=======
-            <!-- Add the main content here, currently blank -->
-        </section>
->>>>>>> origin/main
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
@@ -214,7 +194,6 @@ $result = $stmt->get_result();
         <p>© 2024 WONDER IDEA TECHNOLOGY LIMITED. All rights reserved</p>
     </div>
 </footer>
-<<<<<<< HEAD
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/turn.js/4.1.0/turn.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/turn.js/4.1.0/turn.min.css">
@@ -305,7 +284,5 @@ $result = $stmt->get_result();
     }
 </script>
 
-=======
->>>>>>> origin/main
 </body>
 </html>
