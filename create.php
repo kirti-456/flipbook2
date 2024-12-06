@@ -94,7 +94,7 @@ if ($is_logged_in) {
   <!-- Flipbook Generator Container -->
   <div class="container1">
     <h1>Flipbook Generator</h1>
-    <input type="file" id="pdfFile" accept="application/pdf" />
+    <input type="file" id="fileInput" accept="application/pdf,image/*" multiple />
     <button id="generateFlipbook" disabled>Generate Flipbook</button>
     <div id="flipbook" class="flipbook"></div>
     <div class="navigation">
