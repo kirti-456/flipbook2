@@ -11,7 +11,19 @@ let currentIndex = 0;
 fileInput.addEventListener('change', () => {
     generateFlipbookBtn.disabled = fileInput.files.length === 0;
 });
+// Enable the "Save Flipbook" button after the flipbook is generated
+document.getElementById('saveFlipbook').disabled = false;
+   // Collect flipbook data (e.g., images of pages as base64)
+   const flipbookPages = document.querySelectorAll('.flipbook-page img');
+   const flipbookData = [];
+   flipbookPages.forEach((img) => {
+     flipbookData.push(img.src);
+   });
+ 
+   // Set hidden form field values
+   document.getElementById('flipbookData').value = JSON.stringify(flipbookData);
 
+ 
 // Generate flipbook
 generateFlipbookBtn.addEventListener('click', async () => {
     const files = Array.from(fileInput.files);
