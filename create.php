@@ -93,20 +93,40 @@ if ($is_logged_in) {
 
   <!-- Flipbook Generator Container -->
   <div class="container1">
-    <h1>Flipbook Generator</h1>
-    <input type="file" id="fileInput" accept="application/pdf,image/*" multiple />
+    <h1>Flipbook Generator</h1>  
+    <input type="file" id="fileInput" accept="application/pdf,image/*" required multiple />
     <button id="generateFlipbook" disabled>Generate Flipbook</button>
     <div id="flipbook" class="flipbook"></div>
     <div class="navigation">
       <button id="prevPage" disabled>⬅ Previous</button>
       <button id="nextPage" disabled>Next ➡</button>
     </div>
+    
     <form id="saveFlipbookForm" action="save_flipbook.php" method="POST" style="margin-top: 20px;">
-      <input type="hidden" id="flipbookData" name="flipbookData">
-      <input type="hidden" id="flipbookName" name="flipbookName" value="My Flipbook">
-      <button type="submit" id="saveFlipbook" disabled>Save Flipbook</button>
+    <input type="hidden" id="flipbookData" name="flipbookData">
+    
+    <!-- Flipbook Name Field -->
+    <label for="flipbookName" style="display: block; margin-bottom: 5px;">Enter Flipbook Name:</label>
+    <input 
+        type="text" 
+        id="flipbookName" 
+        name="flipbookName" 
+        placeholder="Enter Flipbook Name" 
+        required 
+        style="margin-bottom: 15px; display: block; width: 100%; padding: 8px;"
+    />
+    
+    <!-- Save Flipbook Button -->
+    <button 
+        type="submit" 
+        id="saveFlipbook" 
+        disabled 
+        style="padding: 10px 20px; font-size: 16px;">
+        Save Flipbook
+    </button>
     </form>
-  </div>
+
+    </div>
   
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.14.305/pdf.min.js"></script>

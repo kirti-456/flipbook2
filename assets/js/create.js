@@ -131,3 +131,23 @@ nextPageBtn.addEventListener('click', () => {
         updateNavigationButtons();
     }
 });
+
+document.getElementById('flipbookNameInput').addEventListener('input', () => {
+    const name = document.getElementById('flipbookNameInput').value.trim();
+    const saveButton = document.getElementById('saveFlipbook');
+    saveButton.disabled = name === '' || !flipbookDataIsValid();
+});
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const fileInput = document.getElementById("fileInput");
+    const saveFlipbookButton = document.getElementById("saveFlipbook");
+
+    fileInput.addEventListener("change", () => {
+        if (fileInput.files.length > 0) {
+            saveFlipbookButton.disabled = false;
+        } else {
+            saveFlipbookButton.disabled = true;
+        }
+    });
+});

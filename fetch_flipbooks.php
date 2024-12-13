@@ -3,6 +3,7 @@ session_start();
 include('database.php');
 
 if (!isset($_SESSION['user_id'])) {
+    header('Content-Type: application/json');
     echo json_encode([]);
     exit;
 }
@@ -20,5 +21,6 @@ while ($row = $result->fetch_assoc()) {
     $flipbooks[] = $row;
 }
 
-echo json_encode($flipbooks);
+header('Content-Type: application/json');
+echo json_encode($flipbooks, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 ?>
