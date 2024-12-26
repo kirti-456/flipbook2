@@ -21,7 +21,6 @@
    <nav class="navbar">
       <a href="../../assets/admin/users_accounts.php">Users</a>
       <a href="../../template.php">Templates</a>
-      <!-- <a href="../../aboutus.php">About us</a> -->
       <a href="messagess.php">Messages</a>
    </nav>
 
