@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <?php
 session_start();
 if (isset($_SESSION["user"])) {
@@ -48,9 +47,9 @@ if ($is_logged_in) {
                     <li class="nav-item">
                         <a class="nav-link" href="./features.php">Features</a>
                     </li>
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a class="nav-link" href="#">Explore</a>
-                    </li>
+                    </li> -->
                     <li class="nav-item">
                         <a class="nav-link" href="./template.php">Templates</a>
                     </li>
@@ -75,7 +74,7 @@ if ($is_logged_in) {
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownProfile">
                             <li><h6 class="dropdown-header">Hi, <?php echo $user_name; ?>!</h6></li>
-                            <!-- <li><a class="dropdown-item" href="profile.php">My Profile</a></li> -->
+                            <li><a class="dropdown-item" href="update_user.php">Update Profile</a></li>
                             <li><hr class="dropdown-divider"></li>
                             <li>
                                 <form action="logout.php" method="POST" class="d-inline">
@@ -290,9 +289,9 @@ if ($is_logged_in) {
                     <li class="nav-item">
                         <a class="nav-link" href="./features.php">Features</a>
                     </li>
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a class="nav-link" href="#">Explore</a>
-                    </li>
+                    </li> -->
                     <li class="nav-item">
                         <a class="nav-link" href="./template.php">Templates</a>
                     </li>

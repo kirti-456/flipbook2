@@ -44,9 +44,9 @@ if ($is_logged_in) {
                 <li class="nav-item">
                     <a class="nav-link" href="./features.php">Features</a>
                 </li>
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <a class="nav-link" href="#">Explore</a>
-                </li>
+                </li> -->
                 <li class="nav-item">
                     <a class="nav-link" href="./template.php">Templates</a>
                 </li>
@@ -68,7 +68,7 @@ if ($is_logged_in) {
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownProfile">
                             <li><h6 class="dropdown-header">Hi, <?php echo $user_name; ?>!</h6></li>
-                            <!-- <li><a class="dropdown-item" href="profile.php">My Profile</a></li> -->
+                            <li><a class="dropdown-item" href="update_user.php">Update Profile</a></li>
                             <li><hr class="dropdown-divider"></li>
                             <li>
                                 <form action="logout.php" method="POST" class="d-inline">
@@ -283,44 +283,7 @@ if ($is_logged_in) {
                 </div>
             </div>
         </div>
-        <!-- Template 5 -->
-        <div class="template-card">
-            <img src="./assets/images/green-transportation.png" alt="Eco-Friendly Green Transportation Brochure Template">
-            <div class="template-info">
-                <h3>Eco-Friendly Green Transportation Brochure Template</h3>
-                <div class="stats">
-                    <span>562 views</span> | <span>17 favorites</span>
-                </div>
-            </div>
-        </div>
-        <div class="template-card">
-            <img src="./assets/images/green-transportation.png" alt="Eco-Friendly Green Transportation Brochure Template">
-            <div class="template-info">
-                <h3>Eco-Friendly Green Transportation Brochure Template</h3>
-                <div class="stats">
-                    <span>562 views</span> | <span>17 favorites</span>
-                </div>
-            </div>
-        </div>
-        <div class="template-card">
-            <img src="./assets/images/green-transportation.png" alt="Eco-Friendly Green Transportation Brochure Template">
-            <div class="template-info">
-                <h3>Eco-Friendly Green Transportation Brochure Template</h3>
-                <div class="stats">
-                    <span>562 views</span> | <span>17 favorites</span>
-                </div>
-            </div>
-        </div>
-        <div class="template-card">
-            <img src="./assets/images/green-transportation.png" alt="Eco-Friendly Green Transportation Brochure Template">
-            <div class="template-info">
-                <h3>Eco-Friendly Green Transportation Brochure Template</h3>
-                <div class="stats">
-                    <span>562 views</span> | <span>17 favorites</span>
-                </div>
-            </div>
-        </div>
-        <!-- Add more templates as needed -->
+
     </section>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
     <footer>

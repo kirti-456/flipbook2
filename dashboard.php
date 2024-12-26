@@ -8,11 +8,11 @@ if (!isset($_SESSION['user_id'])) {
 }
 
 $is_logged_in = isset($_SESSION["user"]);
-$user_name = "User"; // Placeholder for the user's name
+$user_name = "User"; 
 $email = null;
 
 if ($is_logged_in) {
-    require_once "database.php"; // Include your database connection file
+    require_once "database.php"; 
     if (isset($_SESSION['email'])) {
         $email = mysqli_real_escape_string($conn, $_SESSION['email']);
     
@@ -20,7 +20,7 @@ if ($is_logged_in) {
     $result = mysqli_query($conn, $sql);
     $user = mysqli_fetch_assoc($result);
     if ($user) {
-        $user_name = htmlspecialchars($user['full_name']); // Sanitize output
+        $user_name = htmlspecialchars($user['full_name']); 
     }
 }
 }
@@ -31,14 +31,6 @@ $stmt = $conn->prepare("SELECT flipbook_name, flipbook_path, created_at FROM fli
 $stmt->bind_param("i", $userId);
 $stmt->execute();
 $result = $stmt->get_result();
-
-// while ($row = $result->fetch_assoc()) {
-//     echo "<div>";
-//     echo "<h3>" . htmlspecialchars($row['flipbook_name']) . "</h3>";
-//     echo "<p>Created on: " . htmlspecialchars($row['created_at']) . "</p>";
-//     echo "<a href='" . htmlspecialchars($row['flipbook_path']) . "' target='_blank'>View Flipbook</a>";
-//     echo "</div>";
-// }
 ?>
 
 <!DOCTYPE html>
@@ -64,9 +56,9 @@ $result = $stmt->get_result();
             <li class="nav-item">
                 <a class="nav-link" href="features.php">Features</a>
             </li>
-            <li class="nav-item">
+            <!-- <li class="nav-item">
                 <a class="nav-link" href="#">Explore</a>
-            </li>
+            </li> -->
             <li class="nav-item">
                 <a class="nav-link" href="./template.php">Templates</a>
             </li>
@@ -88,7 +80,7 @@ $result = $stmt->get_result();
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownProfile">
                             <li><h6 class="dropdown-header">Hi, <?php echo $user_name; ?>!</h6></li>
-                            <!-- <li><a class="dropdown-item" href="profile.php">My Profile</a></li> -->
+                            <li><a class="dropdown-item" href="update_user.php">Update Profile</a></li>
                             <li><hr class="dropdown-divider"></li>
                             <li>
                                 <form action="logout.php" method="POST" class="d-inline">

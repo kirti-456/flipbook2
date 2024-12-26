@@ -8,11 +8,11 @@ if (!isset($_SESSION['user_id'])) {
 }
 
 $is_logged_in = isset($_SESSION["user"]);
-$user_name = "User"; // Placeholder for the user's name
+$user_name = "User"; 
 $email = null;
 
 if ($is_logged_in) {
-    require_once "database.php"; // Include your database connection file
+    require_once "database.php";
     if (isset($_SESSION['email'])) {
         $email = mysqli_real_escape_string($conn, $_SESSION['email']);
     
@@ -20,7 +20,7 @@ if ($is_logged_in) {
     $result = mysqli_query($conn, $sql);
     $user = mysqli_fetch_assoc($result);
     if ($user) {
-        $user_name = htmlspecialchars($user['full_name']); // Sanitize output
+        $user_name = htmlspecialchars($user['full_name']); 
     }
 }
 }
@@ -48,7 +48,7 @@ if ($is_logged_in) {
         <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item"><a class="nav-link" href="./features.php">Features</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Explore</a></li>
+                <!-- <li class="nav-item"><a class="nav-link" href="#">Explore</a></li> -->
                 <li class="nav-item"><a class="nav-link" href="./template.php">Templates</a></li>
                 <li class="nav-item"><a class="nav-link" href="aboutus.php">About us</a></li>
                 <li class="nav-item"><a class="nav-link" href="contactUs.php">Contact us</a></li>
@@ -57,14 +57,13 @@ if ($is_logged_in) {
             <div class="d-flex align-items-center">
                 <a class="btn btn-primary me-3" href="./dashboard.php">Dashboard</a>
                 <?php if ($is_logged_in): ?>
-                    <!-- Profile Dropdown -->
                     <div class="dropdown">
                         <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownProfile" data-bs-toggle="dropdown" aria-expanded="false">
                             <img src="./assets/images/usericon.png" alt="User" width="32" height="32" class="rounded-circle">
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownProfile">
                             <li><h6 class="dropdown-header">Hi, <?php echo $user_name; ?>!</h6></li>
-                            <!-- <li><a class="dropdown-item" href="profile.php">My Profile</a></li> -->
+                            <li><a class="dropdown-item" href="update_user.php">Update Profile</a></li>
                             <li><hr class="dropdown-divider"></li>
                             <li>
                                 <form action="logout.php" method="POST" class="d-inline">
@@ -74,7 +73,6 @@ if ($is_logged_in) {
                         </ul>
                     </div>
                 <?php else: ?>
-                    <!-- Login/Register Links -->
                     <div class="dropdown">
                         <a href="#" class="d-block link-dark text-decoration-none" id="dropdownUser" data-bs-toggle="dropdown" aria-expanded="false">
                             <img src="./assets/images/usericon.png" alt="User" width="32" height="32" class="rounded-circle">
@@ -125,7 +123,6 @@ if ($is_logged_in) {
         Save Flipbook
     </button>
     </form>
-
     </div>
   
 

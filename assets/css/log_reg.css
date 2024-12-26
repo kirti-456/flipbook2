@@ -45,17 +45,9 @@ body {
 /* Form Fields */
 .form-group {
    margin-bottom: 25px;
+   
 }
 
-/* .container_head {
-   max-width: 100%;
-   text-align: center;
-   margin-bottom: 20px;
-   font-size: 1.2rem;
-   font-weight: bold;
-} */
-
-/* Footer */
 .footer {
    background-color: #222;
    color: #fff;

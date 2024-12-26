@@ -1,4 +1,5 @@
 <?php
+include './assets/admin/connect.php';
 session_start();
 $is_logged_in = isset($_SESSION["user"]);
 $user_name = "User"; // Placeholder for the user's name
@@ -17,6 +18,39 @@ if ($is_logged_in) {
     }
 }
 }
+
+if(isset($_SESSION['user_id'])){
+   $user_id = $_SESSION['user_id'];
+}else{
+   $user_id = '';
+};
+
+if(isset($_POST['send'])){
+
+   $name = $_POST['name'];
+   $name = filter_var($name, FILTER_SANITIZE_STRING);
+   $email = $_POST['email'];
+   $email = filter_var($email, FILTER_SANITIZE_STRING);
+   $number = $_POST['number'];
+   $number = filter_var($number, FILTER_SANITIZE_STRING);
+   $msg = $_POST['msg'];
+   $msg = filter_var($msg, FILTER_SANITIZE_STRING);
+
+   $select_message = $conn->prepare("SELECT * FROM `messages` WHERE name = ? AND email = ? AND number = ? AND message = ?");
+   $select_message->execute([$name, $email, $number, $msg]);
+
+   if($select_message->rowCount() > 0){
+      $message[] = 'already sent message!';
+   }else{
+
+      $insert_message = $conn->prepare("INSERT INTO `messages`(user_id, name, email, number, message) VALUES(?,?,?,?,?)");
+      $insert_message->execute([$user_id, $name, $email, $number, $msg]);
+
+      $message[] = 'sent message successfully!';
+
+   }
+
+}
 ?>
 
 <!DOCTYPE html>
@@ -26,10 +60,10 @@ if ($is_logged_in) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Form</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/contact_style.css">
     <link rel="stylesheet" href="./assets/css/contact.css">
 </head>
 <body>
-    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm ">
         <div class="container">
             <a class="navbar-brand" href="./index.php">
@@ -41,19 +75,19 @@ if ($is_logged_in) {
             <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="./features.php">Features</a>
+                        <a class="nav-link" href="features.php">Features</a>
                     </li>
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a class="nav-link" href="#">Explore</a>
-                    </li>
+                    </li> -->
                     <li class="nav-item">
-                        <a class="nav-link" href="./template.php">Templates</a>
+                        <a class="nav-link" href="template.php">Templates</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="aboutus.php">About us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./contactUs.php">Contact Us</a>
+                        <a class="nav-link" href="contactUs.php">Contact us</a>
                     </li>
                 </ul>
             </div>
@@ -67,7 +101,7 @@ if ($is_logged_in) {
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownProfile">
                             <li><h6 class="dropdown-header">Hi, <?php echo $user_name; ?>!</h6></li>
-                            <!-- <li><a class="dropdown-item" href="profile.php">My Profile</a></li> -->
+                            <li><a class="dropdown-item" href="update_user.php">Update Profile</a></li>
                             <li><hr class="dropdown-divider"></li>
                             <li>
                                 <form action="logout.php" method="POST" class="d-inline">
@@ -91,44 +125,18 @@ if ($is_logged_in) {
             </div>
         </div>
     </nav>
-    <!-- Header Section -->
-    <header class="contact-header">
-        <h2>Leave us a message</h2>
-        <p>We look forward to assisting you.</p>
-    </header>
 
-    <!-- Contact Form Section -->
-    <div class="contact-container">
-        <h1>Contact FlipHTML5</h1>
-        <p>Please feel free to contact us for assistance on how to purchase and use FlipHTML5. We will get back to you within 1 business day.</p>
-
-        <form action="#" method="POST" class="contact-form">
-            <label for="name">Your name: *</label>
-            <input type="text" id="name" name="name" required>
-
-            <label for="email">Your email: *</label>
-            <input type="email" id="email" name="email" required>
-
-            <label for="category">Category:</label>
-            <select id="category" name="category">
-                <option value="Pre purchase questions">Pre purchase questions</option>
-                <option value="Technical support">Technical support</option>
-                <option value="Billing questions">Billing questions</option>
-                <option value="General inquiry">General inquiry</option>
-            </select>
-
-            <label for="subject">Subject:</label>
-            <input type="text" id="subject" name="subject">
-
-            <label for="message">Message: *</label>
-            <textarea id="message" name="message" required placeholder="Message, Comments, Questions, Thoughts About Life. :)"></textarea>
-
-            <label for="file">Ensource:</label>
-            <input type="file" id="file" name="file">
-
-            <button type="submit">Submit</button>
+    <section class="contact">
+        <form action="" method="post">
+            <h3>get in touch</h3>
+            <input type="text" name="name" placeholder="enter your name" required maxlength="20" class="box">
+            <input type="email" name="email" placeholder="enter your email" required maxlength="50" class="box">
+            <input type="number" name="number" min="0" max="9999999999" placeholder="enter your number" required onkeypress="if(this.value.length == 10) return false;" class="box">
+            <textarea name="msg" class="box" placeholder="enter your message" cols="30" rows="10"></textarea>
+            <input type="submit" value="send message" name="send" class="btn">
         </form>
-    </div>
+    </section>
+    <script src="../assets/js/contact.js"></script>
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
     <footer>
@@ -184,5 +192,6 @@ if ($is_logged_in) {
             <p>© 2024 WONDER IDEA TECHNOLOGY LIMITED. All rights reserved</p>
         </div>
     </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/turn.js/4.1.0/turn.min.js"></script>
 </body>
 </html>

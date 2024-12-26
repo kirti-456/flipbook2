@@ -48,9 +48,9 @@ if ($is_logged_in) {
                     <li class="nav-item">
                         <a class="nav-link" href="./features.php">Features</a>
                     </li>
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a class="nav-link" href="#">Explore</a>
-                    </li>
+                    </li> -->
                     <li class="nav-item">
                         <a class="nav-link" href="./template.php">Templates</a>
                     </li>
@@ -75,7 +75,7 @@ if ($is_logged_in) {
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownProfile">
                             <li><h6 class="dropdown-header">Hi, <?php echo $user_name; ?>!</h6></li>
-                            <!-- <li><a class="dropdown-item" href="profile.php">My Profile</a></li> -->
+                            <li><a class="dropdown-item" href="update_user.php">Update Profile</a></li>
                             <li><hr class="dropdown-divider"></li>
                             <li>
                                 <form action="logout.php" method="POST" class="d-inline">
@@ -131,18 +131,34 @@ if ($is_logged_in) {
             }
         }
         ?>
-      <form action="login.php" method="post">
-        <div class="form-group">
-            <input type="email" placeholder="Enter Email:" name="email" class="form-control">
-        </div>
-        <div class="form-group">
-            <input type="password" placeholder="Enter Password:" name="password" class="form-control">
-        </div>
+        <style>
+            .form-group {
+                margin-bottom: 25px;
+            }
+            .form-btn {
+                margin-bottom: 20px;
+            }
+        </style>
+
+    <div class="form-container">
+        <form action="login.php" method="post">
+            <div class="form-group">
+                <input type="email" placeholder="Enter Email:" name="email" class="form-control">
+            </div>
+            <div class="form-group">
+                <input type="password" placeholder="Enter Password:" name="password" class="form-control">
+            </div>
+            <div class="form-btn">
+                <input type="submit" value="Login" name="login" class="btn btn-primary">
+            </div>
+        </form>
         <div class="form-btn">
-            <input type="submit" value="Login" name="login" class="btn btn-primary">
+            <a href="./assets/admin/admin_login.php" class="btn btn-secondary">Login as Admin</a>
         </div>
-      </form>
-     <div><p>Not registered yet <a href="registration.php">Register Here</a></p></div>
+        <div>
+            <p>Not registered yet? <a href="registration.php">Register Here</a></p>
+        </div>
+    </div>
     </div>
 
     <!-- Footer -->
